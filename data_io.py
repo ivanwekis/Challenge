@@ -42,7 +42,7 @@ def write_header_and_encrypted_data(header, customers, output_file_path):
             elif key == "Billing":
                 line += str(average)
             else:
-                line += mask.encrypt_alpha_num(customer.get(key))
+                line += customer.get(key)
             non_coma += 1
         line += "\n"
         text_encrypted += line
