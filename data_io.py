@@ -39,6 +39,9 @@ def write_header_and_encrypted_data(header, customers, output_file_path):
                 validations.validate_email(customer.get(key))
                 email = mask.encrypt_alpha_num(customer.get(key))
                 line += email
+            if key == "Name":
+                name = mask.encrypt_alpha_num(customer.get(key))
+                line += name
             elif key == "Billing":
                 line += str(average)
             else:
